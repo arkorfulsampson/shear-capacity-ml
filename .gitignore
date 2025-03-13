@@ -1,0 +1,46 @@
+# Ignore build and distribution folders
+build/
+dist/
+
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+*.env
+env/
+venv/
+
+# Ignore machine learning model files
+*.pkl
+
+# Ignore logs and outputs
+*.log
+logs/
+*.csv
+*.db
+*.sqlite3
+
+# Ignore OS and IDE-specific files
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+.vscode/
+.idea/
+
+# Ignore executable and generated files
+*.exe
+*.spec
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore large datasets and intermediate files
+*.h5
+*.ckpt
+
+# 🚫 Ignore Steel Girder App and xgboost folders
+Steel Girder App/
+xgboost/
