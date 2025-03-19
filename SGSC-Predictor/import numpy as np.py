@@ -6,4 +6,4 @@ from sklearn.preprocessing import StandardScaler
 scaler = joblib.load('scaler.pkl')
 
 # Save it again with an updated format
-joblib.dump(scaler, 'scaler_fixed.pkl')
+joblib.dump(scaler, 'scaler_fixed.pkl') #ur file name
