@@ -7,25 +7,22 @@ from tkinter import messagebox
 
 base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
 
-
-# Define full paths for model and scaler
-model_path = os.path.join(base_path, "xgb_model.pkl")
-scaler_path = os.path.join(base_path, "scaler.pkl")
+# Define full paths for model and scaler in the SGSC-Predictor subfolder
+model_path = os.path.join(base_path, "SGSC-Predictor", "xgb_model.pkl")
+scaler_path = os.path.join(base_path, "SGSC-Predictor", "scaler.pkl")
 
 # Check if model and scaler exist before loading
 if not os.path.exists(model_path):
-    messagebox.showerror("Error", "Model file 'xgb_model.pkl' not found! Place it in the same folder as the .exe.")
+    messagebox.showerror("Error", "Model file 'xgb_model.pkl' not found in SGSC-Predictor folder! Make sure the SGSC-Predictor folder with the model file is in the same directory as the .exe.")
     sys.exit()
 
 if not os.path.exists(scaler_path):
-    messagebox.showerror("Error", "Scaler file 'scaler.pkl' not found! Place it in the same folder as the .exe.")
+    messagebox.showerror("Error", "Scaler file 'scaler.pkl' not found in SGSC-Predictor folder! Make sure the SGSC-Predictor folder with the scaler file is in the same directory as the .exe.")
     sys.exit()
 
-# Load the trained model and scaler
-model = joblib.load('xgb_model.pkl')  # Ensure this file is in the same directory
-scaler = joblib.load('scaler.pkl')    # Ensure this file is in the same directory
-
-
+# Load the trained model and scaler using the full paths
+model = joblib.load(model_path)  # Use the full path
+scaler = joblib.load(scaler_path)  # Use the full path
 
 # Function to handle predictions
 def predict():
